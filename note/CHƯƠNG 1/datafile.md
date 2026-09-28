@@ -10,7 +10,7 @@
 
 **Nội dung**
 
-- **1.1. Giới thiệu hệ quản trị cơ sở dữ liệu**
+- **1.1. [[tong_quan_he_quan_tri_csdl]]**
   - 1.1.1. Giới thiệu chung
   - 1.1.2. Một số khái niệm cơ bản
   - 1.1.3. Các tính năng và đặc điểm chính của HQT CSDL
@@ -18,10 +18,10 @@
   - 1.1.5. Các thành phần cơ bản của hệ quản trị cơ sở dữ liệu (HQT CSDL)
   - 1.1.6. Kiến trúc CSDL quan hệ (Relational Database Architecture)
   - 1.1.7. Các công cụ và trình tiện ích
-- **1.2. Tạo và quản trị cơ sở dữ liệu**
+- **1.2. Tạo và quản trị [[database]]**
   - 1.2.1. Cơ sở dữ liệu (CSDL) và các tập tin lưu trữ
   - 1.2.2. Quản trị database
-- **1.3. Tạo và quản trị bảng**
+- **1.3. Tạo và quản trị [[table]]**
   - 1.3.1. Kiểu dữ liệu
   - 1.3.2. Tạo bảng
   - 1.3.3. Quản trị bảng
@@ -38,14 +38,14 @@
 
 **Nội dung**
 
-- **2.1. Tổng quan về sao lưu và phục hồi dữ liệu**
+- **2.1. Tổng quan về [[Backup & restore data]]**
   - 2.1.1. Mục đích của việc sao lưu và phục hồi dữ liệu
   - 2.1.2. Các cơ chế sao lưu dữ liệu
   - 2.1.3. Kịch bản sao lưu dữ liệu
-- **2.2. Sao lưu dữ liệu (Backup)**
-- **2.3. Phục hồi**
-- **2.4. Attach và detach**
-- **2.5. Import/Export data – Nhập hoặc trích xuất dữ liệu**
+- **2.2. [[backup]]** 
+- **2.3. [[RESTORE]]** 
+- **2.4. [[Attach và Detach]]
+- **2.5. [[Import-Export data]] – Nhập hoặc trích xuất dữ liệu**
   - Import hoặc Export Wizard
 
 **Bài tập Chương 2**
