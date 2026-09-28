@@ -4,7 +4,7 @@ Khi không muốn duy trì kiểm tra toàn vẹn dữ liệu nữa, ta có th�
 
 ---
 
-## 1. Xóa Constraint (CHECK, DEFAULT, UNIQUE, FOREIGN KEY)
+## 1. Xóa Constraint (PRIMARY KEY, CHECK, DEFAULT, UNIQUE, FOREIGN KEY)
 
 ### Cú pháp chung
 ```sql
@@ -14,6 +14,9 @@ DROP CONSTRAINT [TEN_CONSTRAINT];
 
 ### Ví dụ cụ thể
 ```sql
+-- Xóa PRIMARY KEY
+ALTER TABLE SinhVien DROP CONSTRAINT PK_SinhVien;
+
 -- Xóa CHECK
 ALTER TABLE SinhVien DROP CONSTRAINT CK_SinhVien_Tuoi;
 

@@ -36,6 +36,10 @@
   ALTER TABLE SinhVien
   ADD CONSTRAINT DF_TrangThai DEFAULT N'Đang học' FOR TrangThai;
   ```
+> ⚠️ **Lưu ý về DEFAULT:**  
+> `DEFAULT` chỉ có hiệu lực khi câu lệnh `INSERT` **không đề cập đến cột** đó.  
+> - `INSERT INTO SinhVien (MaSV) VALUES ('SV01');` → `TrangThai` tự nhận `N'Đang học'`.  
+> - `INSERT INTO SinhVien (MaSV, TrangThai) VALUES ('SV01', NULL);` → `TrangThai` nhận `NULL` (chứ không tự biến thành `Đang học`).
 
 ### 3. `NOT NULL` (Không cho phép trống)
 - Không dùng `ADD CONSTRAINT`, khai báo trực tiếp ở cột:
@@ -46,14 +50,23 @@
   -- Thêm vào bảng đã có
   ALTER TABLE SinhVien ALTER COLUMN HoTen NVARCHAR(50) NOT NULL;
   ```
+> ⚠️ **Cảnh báo khi sửa bảng:**  
+> Khi chuyển một cột từ cho phép NULL sang `NOT NULL`, dữ liệu hiện tại của cột đó **không được chứa bất kỳ giá trị `NULL` nào**, nếu không lệnh `ALTER` sẽ báo lỗi.
 
 ### 4. `RULE` (Tạo quy tắc riêng & bind)
 ```sql
--- Tạo rule
+-- Bước 1: Tạo rule
 CREATE RULE RL_Tuoi AS @Tuoi >= 18;
 
--- Bind vào cột
+-- Bước 2: Bind vào cột
 EXEC sp_bindrule 'RL_Tuoi', 'SinhVien.Tuoi';
+
+-- Khi muốn gỡ bỏ RULE:
+-- Bước 3: Unbind khỏi cột trước
+EXEC sp_unbindrule 'SinhVien.Tuoi';
+
+-- Bước 4: Sau đó mới xóa RULE khỏi database
+DROP RULE RL_Tuoi;
 ```
 
 ---
